@@ -1,0 +1,14 @@
+﻿@Model Person
+@{
+    ViewData["Title"] = "EditForm";
+}
+
+<h1>Edit Person</h1>
+
+<form method="post" action="/person/savechanges">
+    <input type="hidden" name="id" value="@Model.PersonID" />
+    First Name: <input type="text" name="firstname" value="@Model.First_Name" /><br />
+    Last Name: <input type="text" name="lastname" value="@Model.Last_Name" /><br />
+    Email: <input type="text" name="email" value="@Model.Email" /><br />
+    <input type="submit" value="Save"/>
+</form>

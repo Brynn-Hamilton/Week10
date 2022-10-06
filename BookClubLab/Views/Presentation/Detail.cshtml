@@ -1,0 +1,14 @@
+﻿@model Presentation
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Presentation Details</h1>
+@Model.BookTitle by @Model.BookAuthor<br />
+A @Model.Genre story.<br />
+Presentation ID: @Model.Id <br />
+Presentation Date: @Model.PresentationDate.ToShortDateString()<br />
+Presentation by: BC Member @Model.PersonID - @ViewBag.Presenter.FirstName @ViewBag.Presenter.LastName <br />
+
+

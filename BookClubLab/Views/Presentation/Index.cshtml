@@ -1,0 +1,27 @@
+﻿@model List<Presentation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Presentation presentation in Model) {
+            <tr>
+                <td>@presentation.BookTitle</td>
+                <td>
+                    <a href="/presentation/detail/@presentation.Id">Details</a>
+                    <a href="/presentation/editform/@presentation.Id">Edit</a>
+                    <a href="/presentation/delete/@presentation.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

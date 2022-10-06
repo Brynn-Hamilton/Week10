@@ -1,0 +1,23 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "ConfirmDelete";
+}
+
+<h1>Are you sure you want to delete @Model.FirstName @Model.LastName</h1>
+
+@if(ViewBag.presentationCount == 0)
+{
+    <div>@Model.FirstName does not currently have any presentations scheduled </div>
+    <div><a href="/person/delete/@Model.Id">Yes, delete</a></div>
+    <div><a href="/person">No, cancel</a></div>
+}
+else
+{
+    <div>@Model.FirstName currently has @ViewBag.presentationCount presentations scheduled.</div>
+    <div><a href="/person/delete/@Model.Id">Yes, delete</a> (Warning! This will delete all presentations for @Model.FirstName @Model.LastName!)</div>
+    <div><a href="/person">No, cancel</a></div>
+}
+
+
+
+

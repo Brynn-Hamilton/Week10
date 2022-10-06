@@ -1,0 +1,32 @@
+﻿@model Presentation
+@{
+    ViewData["Title"] = "EditForm";
+}
+
+<h1>EditForm</h1>
+
+<form method="post" action="/presentation/savechanges">
+       ID: @Model.Id<br />
+        BC Member Presenting:
+    <select name="PersonId">
+        @foreach(Person person in ViewBag.Presenter)
+        {
+            if(person.Id == Model.PersonID)
+            {
+                <option value="@person.Id" selected>@person.FirstName @person.LastName</option>
+            }
+            else
+            {
+                <option value="@person.Id">@person.FirstName @person.LastName</option>
+            }
+        }
+    </select>
+    <br />
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    Presentation Date: <input type="text" name="PresentationDate" value="@Model.PresentationDate" /><br />
+    Book Title: <input type="text" name="BookTitle" value="@Model.BookTitle" /><br />
+    Book Author: <input type="text" name="BookAuthor" value="@Model.BookAuthor" /><br />
+    Genre: <input type="text" name="Genre" value="@Model.Genre" /><br />
+    <input type="submit" value="Save" />
+</form>

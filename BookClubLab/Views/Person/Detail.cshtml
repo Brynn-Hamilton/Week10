@@ -1,0 +1,20 @@
+﻿@model Person
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Book Club Member Details</h1>
+
+BC Member ID: @Model.Id <br />
+<h4>@Model.FirstName @Model.LastName</h4>
+Email: @Model.Email
+
+@if(ViewBag.presentationCount == 0)
+{
+    <div>No presentations scheduled</div>
+}
+else
+{
+    <div>Number of upcoming presentations: @ViewBag.presentationCount</div>
+}

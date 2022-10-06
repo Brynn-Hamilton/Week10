@@ -1,0 +1,15 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a href="/person/addform">Add A Person</a>
+
+@foreach(Person person in Model)
+{
+    <div>
+        @person.First_Name
+    </div>
+}

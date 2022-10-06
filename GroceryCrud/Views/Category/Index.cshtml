@@ -1,0 +1,31 @@
+﻿@model List<Category> // This line is the *type* of the model
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@*@foreach(Category category in Model){
+    <div>@category.id</div>
+}*@
+
+<a href="/category/addform">Add Category</a>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Actions</th>
+    </thead>
+    <tbdoy>
+        @foreach(Category category in Model)
+        {
+            <tr>
+                <td>@category.name</td>
+                <td>
+                    <a href="/category/detail/@category.id">Details</a>
+                    <a href="/category/editform/@category.id">Edit</a>
+                    <a href="/category/delete/@category.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbdoy>
+</table>

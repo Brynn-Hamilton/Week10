@@ -1,0 +1,13 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1>Add New Person</h1>
+
+<form method="post" action="/person/add">
+    First Name: <input type="text" name="First_Name" />@TempData["FirstNameError"]<br />
+    Last Name: <input type="text" name="Last_Name" />@TempData["LastNameError"]<br />
+    Email: <input type="text" name="Email" />@TempData["EmailError"]<br />
+    <input type="submit" value="Save"/>
+</form>

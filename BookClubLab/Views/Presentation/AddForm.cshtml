@@ -1,0 +1,23 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1>Add Presentation</h1>
+
+<form method="post" action="/presentation/add">
+    BC Member Presenting:
+    <select name="PersonId">
+        @foreach(Person person in Model)
+        {
+            <option value="@person.Id">@person.FirstName @person.LastName</option>
+        }
+    </select>
+    <br />
+    Presentation Date: <input type="text" name="PresentationDate" />@TempData["DateError"]<br />
+    Book Title: <input type="text" name="BookTitle" />@TempData["TitleError"]<br />
+    Book Author: <input type="text" name="BookAuthor" />@TempData["AuthorError"]<br />
+    Genre: <input type="text" name="Genre" />@TempData["GenreError"]<br />
+    <input type="submit" value="Save" />
+</form>
+
